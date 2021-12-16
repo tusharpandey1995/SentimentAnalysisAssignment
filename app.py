@@ -1,13 +1,15 @@
 import numpy as np
 from flask import Flask, request, jsonify, render_template
 import pickle
+# Libraries for feature engineering
+from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 
 app = Flask(__name__)
 model = pickle.load(open('best_model.pkl', 'rb'))
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return render_template('/templates/index.html')
 
 @app.route('/predict',methods=['POST'])
 def predict():
