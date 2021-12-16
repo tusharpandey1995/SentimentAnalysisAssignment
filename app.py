@@ -11,7 +11,8 @@ model = pickle.load(open('best_model.pkl', 'rb'))
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+
+    return render_template('Index.html')
 
 @app.route('/predict',methods=['POST'])
 def predict():
@@ -35,3 +36,4 @@ def predict():
 if __name__ == "__main__":
     app.run(debug=True)
     app.config["DEBUG"]=True
+
