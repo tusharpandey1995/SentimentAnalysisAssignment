@@ -145,10 +145,7 @@ pyparsing==2.4.7
 pyrsistent==0.18.0
 PySocks==1.7.1
 python-dateutil==2.8.2
-python-jsonrpc-server==0.4.0
-python-language-server==0.36.2
 pytz==2021.3
-PyVirtualDisplay==2.2
 PyYAML==5.4.1
 pyzmq==22.2.1
 QDarkStyle==2.8.1
