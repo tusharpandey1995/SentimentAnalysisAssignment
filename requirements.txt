@@ -356,8 +356,8 @@ tifffile==2021.11.2
 toml==0.10.2
 tomli==1.2.2
 toolz==0.11.2
-torch==1.10.0+cu111
-torchaudio==0.10.0+cu111
+torch
+torchaudio
 torchsummary==1.5.1
 torchtext==0.11.0
 torchvision==0.11.1+cu111
