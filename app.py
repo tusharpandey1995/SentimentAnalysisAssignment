@@ -22,9 +22,9 @@ def predict():
     vect = tv.transform(data).toarray()
     prediction = model.predict(vect)
 
-    output = round(prediction[0], 2)
+    output = 'Positive' if prediction[0] else 'Negative'
 
-    return render_template('Index.html', prediction_text='Employee Salary should be $ {}'.format(output))
+    return render_template('Index.html', prediction_text='Sentiment Polarity: '.format(output))
 
 
 if __name__ == "__main__":
