@@ -9,6 +9,8 @@ from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 app = Flask(__name__)
 model = pickle.load(open('best_model.pkl', 'rb'))
 
+print('+++++++App Running+++++++')
+
 @app.route('/')
 def home():
 
