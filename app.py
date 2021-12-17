@@ -29,7 +29,7 @@ def predict():
     else:
         output = 'Negative'
 
-    return render_template('Index.html', prediction_text='Sentiment Polarity: {}'.format(output), confidence_text='Confidence: {}'.format(confidence))
+    return render_template('Index.html', prediction_text='Sentiment Polarity: {}'.format(output), confidence_text='Confidence: {}'.format(round(confidence*100,2)))
 
 
 if __name__ == "__main__":
