@@ -22,6 +22,7 @@ def predict():
     vect = tv.transform(data).toarray()
     prediction = model.predict(vect)
     confidence = model.predict_proba(vect)
+    confidence = round(confidence[0]*100,2)
     
 
     if prediction[0]:
@@ -29,7 +30,7 @@ def predict():
     else:
         output = 'Negative'
 
-    return render_template('Index.html', prediction_text='Sentiment Polarity: {}'.format(output), confidence_text='Confidence: {}'.format(round(confidence*100,2)))
+    return render_template('Index.html', prediction_text='Sentiment Polarity: {}'.format(output), confidence_text='Confidence: {}'.format(confidence))
 
 
 if __name__ == "__main__":
