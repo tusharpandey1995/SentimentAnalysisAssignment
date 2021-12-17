@@ -21,16 +21,18 @@ def predict():
     '''
     # str_features = [str(x) for x in request.fm.values()]
     # print(str_features)
+    print('+++++++App Running from predict+++++++', request.form['inputText'])
     tv = TfidfVectorizer(use_idf=True, min_df=0.0, max_df=1.0, ngram_range=(1,2),sublinear_tf=True)
-    str_features = pd.DataFrame([np.array(request.form['inputText'])])
-    final_features = tv.fit_transform(str_features)
+#     str_features = pd.DataFrame([request.form['inputText']],columns=['Review'],ignore_index=True)
+#     print('+++++++str_features+++++++',str_features.Review)
+    final_features = tv.fit_transform([request.form['inputText']])
     # final_features = 
     print(final_features)
     prediction = model.predict(final_features)
 
     output = round(prediction[0], 2)
 
-    return render_template('index.html', prediction_text='Employee Salary should be $ {}'.format(output))
+    return render_template('Index.html', prediction_text='Employee Salary should be $ {}'.format(output))
 
 
 if __name__ == "__main__":
