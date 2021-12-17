@@ -21,11 +21,11 @@ def predict():
     '''
     # str_features = [str(x) for x in request.fm.values()]
     # print(str_features)
-    print('+++++++App Running from predict+++++++')
+    print('+++++++App Running from predict+++++++', request.form['inputText'])
     tv = TfidfVectorizer(use_idf=True, min_df=0.0, max_df=1.0, ngram_range=(1,2),sublinear_tf=True)
-    str_features = pd.DataFrame([request.form['inputText']],columns=['Review'],ignore_index=True)
-    print('+++++++str_features+++++++',str_features.Review)
-    final_features = tv.fit_transform(str_features)
+#     str_features = pd.DataFrame([request.form['inputText']],columns=['Review'],ignore_index=True)
+#     print('+++++++str_features+++++++',str_features.Review)
+    final_features = tv.fit_transform(request.form['inputText'])
     # final_features = 
     print(final_features)
     prediction = model.predict(final_features)
