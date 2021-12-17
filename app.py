@@ -21,7 +21,7 @@ def predict():
     data = [message]
     vect = tv.transform(data).toarray()
     prediction = model.predict(vect)
-    confidence = model.predict_proba_(vect)
+    confidence = model.predict_proba(vect)
     
 
     if prediction[0]:
