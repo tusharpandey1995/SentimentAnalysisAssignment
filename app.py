@@ -21,8 +21,12 @@ def predict():
     data = [message]
     vect = tv.transform(data).toarray()
     prediction = model.predict(vect)
+    
 
-    output = 'Positive' if prediction[0] else 'Negative'
+    if prediction[0]:
+        output = 'Positive'
+    else:
+        output = 'Negative'
 
     return render_template('Index.html', prediction_text='Sentiment Polarity: '.format(output))
 
