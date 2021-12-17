@@ -23,7 +23,7 @@ def predict():
     # print(str_features)
     print('+++++++App Running from predict+++++++')
     tv = TfidfVectorizer(use_idf=True, min_df=0.0, max_df=1.0, ngram_range=(1,2),sublinear_tf=True)
-    str_features = pd.DataFrame([np.array(request.form['inputText'])],columns=['Review'])
+    str_features = pd.DataFrame([request.form['inputText']],columns=['Review'])
     print('+++++++str_features+++++++',str_features.Review)
     final_features = tv.fit_transform(str_features)
     # final_features = 
