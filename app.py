@@ -22,7 +22,7 @@ def predict():
     vect = tv.transform(data).toarray()
     prediction = model.predict(vect)
     confidence = model.predict_proba(vect)
-    cofd = round((confidence[0]*100),2)
+    cofd = round((confidence.flat[0]*100),2)
     
 
     if prediction[0]:
